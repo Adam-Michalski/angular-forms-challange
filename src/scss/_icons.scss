@@ -1,0 +1,35 @@
+
+.icon-user {
+  width: 22px;
+  height: 22px;
+  background: url("./assets/user.png") no-repeat;
+  transform: scale(0.75, 0.75);
+}
+
+.icon-lock {
+  width: 21px;
+  height: 26px;
+  background: url("./assets/lock.png") no-repeat;
+  transform: scale(0.75, 0.75);
+}
+
+.icon-envelope {
+  width: 24px;
+  height: 16px;
+  background: url("./assets/envelope.png") no-repeat;
+  transform: scale(0.75, 0.75);
+}
+
+.icon-phone {
+  width: 15px;
+  height: 25px;
+  background: url("./assets/phone.png") no-repeat;
+  transform: scale(0.75, 0.75);
+}
+
+.icon-map-marker {
+  width: 15px;
+  height: 24px;
+  background: url("./assets/map-marker.png") no-repeat;
+  transform: scale(0.75, 0.75);
+}

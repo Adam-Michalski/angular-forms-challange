@@ -1,20 +1,153 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
 
+    <h2>Register Form</h2>
+    <div class="form-validation">
+      <div class="form-validation-container">
+        <pre class="form-value"><code><span *ngFor="let line of (accountForm.value | json).split('\n')">{{line}}</span></code></pre>
+        <div class="form-validation-item">
+          username: <span [ngClass]="{'valid': accountForm.get('username').valid,
+        'invalid': accountForm.get('username').invalid}">valid</span>
+          <span [ngClass]="{'valid': accountForm.get('username').touched,
+        'invalid': !accountForm.get('username').touched}">touched</span>
+          <span [ngClass]="{'valid': accountForm.get('username').dirty,
+        'invalid': !accountForm.get('username').dirty}">dirty</span>
+          <span [ngClass]="{'valid': accountForm.get('username').pristine,
+        'invalid': !accountForm.get('username').pristine}">pristine</span>
+        </div>
+        <div class="form-validation-item">
+          password: <span [ngClass]="{'valid': accountForm.get('password').valid,
+        'invalid': accountForm.get('password').invalid}">valid</span>
+          <span [ngClass]="{'valid': accountForm.get('password').touched,
+        'invalid': !accountForm.get('password').touched}">touched</span>
+          <span [ngClass]="{'valid': accountForm.get('username').dirty,
+        'invalid': !accountForm.get('password').dirty}">dirty</span>
+          <span [ngClass]="{'valid': accountForm.get('password').pristine,
+        'invalid': !accountForm.get('password').pristine}">pristine</span>
+        </div>
+        <div class="form-validation-item">
+          email: <span [ngClass]="{'valid': accountForm.get('email').valid,
+        'invalid': accountForm.get('email').invalid}">valid</span>
+          <span [ngClass]="{'valid': accountForm.get('email').touched,
+        'invalid': !accountForm.get('email').touched}">touched</span>
+          <span [ngClass]="{'valid': accountForm.get('email').dirty,
+        'invalid': !accountForm.get('email').dirty}">dirty</span>
+          <span [ngClass]="{'valid': accountForm.get('email').pristine,
+        'invalid': !accountForm.get('email').pristine}">pristine</span>
+        </div>
+        <div class="form-validation-item">
+          terms: <span [ngClass]="{'valid': accountForm.get('terms').valid,
+        'invalid': accountForm.get('terms').invalid}">valid</span>
+          <span [ngClass]="{'valid': accountForm.get('terms').touched,
+        'invalid': !accountForm.get('terms').touched}">touched</span>
+          <span [ngClass]="{'valid': accountForm.get('terms').dirty,
+        'invalid': !accountForm.get('terms').dirty}">dirty</span>
+          <span [ngClass]="{'valid': accountForm.get('terms').pristine,
+        'invalid': !accountForm.get('terms').pristine}">pristine</span>
+        </div>
+      </div>
+    </div>
+
+    <app-register-form [formGroup]="accountForm"></app-register-form>
+
+    <h2>Send Email</h2>
+    <div class="form-wrapper">
+      <form>
+        <div class="input-container">
+          <div class="input-field">
+            <span><i class="icon-user" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Your name"/>
+          </div>
+        </div>
+        <div class="input-container">
+          <div class="input-field">
+            <span><i class="icon-envelope" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Your Email"/>
+          </div>
+        </div>
+        <div class="input-field textarea-field">
+          <textarea rows="10" placeholder="Type your message..."></textarea>
+        </div>
+
+        <div class="input-field checkbox-field">
+          <input type="checkbox" name="check2" id="check2" value="check2"/>
+          <label for="check2">Send a copy to my Email</label>
+        </div>
+
+        <button>Send Email</button>
+      </form>
+    </div>
+
+    <h2>Sign In Form</h2>
+    <div class="form-wrapper">
+      <form>
+        <div class="input-field">
+          <span><i class="icon-user" aria-hidden="true"></i></span>
+          <input type="text" placeholder="Username"/>
+        </div>
+
+        <div class="input-field">
+          <span><i class="icon-lock" aria-hidden="true"></i></span>
+          <input type="text" placeholder="Password"/>
+        </div>
+
+        <div class="input-field checkbox-field flex-field">
+          <div class="field-50">
+            <input type="checkbox" name="check3" id="check3" value="check3"/>
+            <label for="check3">Remember me</label>
+          </div>
+
+          <div class="field-50">
+            <button>Sign In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <h2>Recover Form</h2>
+    <div class="form-wrapper">
+      <form>
+        <div class="input-field">
+          <span><i class="icon-envelope" aria-hidden="true"></i></span>
+          <input type="text" placeholder="Enter your Email"/>
+        </div>
+
+        <div class="input-field">
+          <span><i class="icon-phone" aria-hidden="true"></i></span>
+          <input type="text" placeholder="Enter your Phone number"/>
+        </div>
+
+        <div class="input-field checkbox-field flex-field">
+          <div class="field-50">
+            <button>Send</button>
+          </div>
+
+          <div class="field-50">
+            <button class="inactive">Done</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <h2>Subscribe Form</h2>
+    <div class="form-wrapper">
+      <form>
+        <div class="input-field">
+          <span><i class="icon-envelope" aria-hidden="true"></i></span>
+          <input type="text" placeholder="Enter your Email"/>
+        </div>
+
+        <div class="input-field checkbox-field flex-field">
+          <div class="field-50">
+            <button>Subscribe</button>
+          </div>
+
+          <div class="field-50">
+            <button class="red">No, Thanks</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

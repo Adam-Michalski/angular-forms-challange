@@ -1,0 +1,46 @@
+<div class="form-wrapper">
+  <form novalidate (ngSubmit)="onSubmit(formGroup.value)" [formGroup]="formGroup">
+    <div class="input-container">
+      <div class="input-field">
+        <span><i class="icon-user" aria-hidden="true"></i></span>
+        <input type="text" placeholder="Username" formControlName="username"/>
+      </div>
+      <span *ngIf="formGroup.get('username').touched && formGroup.get('username').invalid"
+            class="invalid-msg">
+        This field is required.
+      </span>
+    </div>
+    <div class="input-container">
+      <div class="input-field">
+        <span><i class="icon-lock" aria-hidden="true"></i></span>
+        <input type="password" placeholder="Password" formControlName="password"/>
+      </div>
+      <span *ngIf="formGroup.get('password').touched && formGroup.get('password').touched"
+            class="invalid-msg">
+        This field is required.
+      </span>
+    </div>
+    <div class="input-container">
+      <div class="input-field">
+        <span><i class="icon-envelope" aria-hidden="true"></i></span>
+        <input type="text" placeholder="Email" formControlName="email"/>
+      </div>
+      <span class="invalid-msg"
+            *ngIf="formGroup.get('email').touched && formGroup.get('email').invalid">
+        This field is required.
+      </span>
+    </div>
+    <div class="input-container">
+      <div class="input-field checkbox-field">
+        <input type="checkbox" id="check1" name="check" value="Check1" formControlName="terms"/>
+        <label for="check1">I have read and accept the terms of use.</label>
+      </div>
+      <span class="invalid-msg"
+            *ngIf="!formGroup.get('terms').value
+                && formGroup.get('terms').dirty">
+        You must accept the terms of use.
+      </span>
+    </div>
+    <button [disabled]="formGroup.invalid" type="submit">Sign up</button>
+  </form>
+</div>
